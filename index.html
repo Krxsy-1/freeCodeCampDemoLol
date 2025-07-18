@@ -36,14 +36,17 @@
       margin: 0 10px;
       font-size: 1rem;
       padding: 14px 16px;
+      outline-color: white;
+      outline-width: 1px;
+      outline-style: solid;
     }
     .navbar {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 1rem 2rem;
-        background-color: black;
-        flex-wrap: wrap;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 2rem;
+      background-color: black;
+      flex-wrap: wrap;
     }
     .search-bar {
       display: flex;
@@ -65,6 +68,9 @@
       color: white;
       cursor: pointer;
     }
+    .signin-button {
+      background-color: #b7942c;
+    }
     .first-section {
       background: linear-gradient(to right, #461c6a, #1a2859);
       min-height: 100vh;
@@ -75,17 +81,17 @@
       text-align: left;
     }
     .first-content {
-        max-width: 600px;
-        align-self: flex-start;
+      max-width: 600px;
+      align-self: flex-start;
     }
     .first-content h1 {
-        font-size: 2.5rem;
-        margin-bottom: 1rem;
+      font-size: 5.5rem;
+      margin-bottom: 1rem;
     }
     .first-content p {
       max-width: 600px;
       margin: 10px auto;
-      font-size: 1.2rem;
+      font-size: 2.2rem;
     }
     .first-section button {
       background-color: rgb(183, 148, 44);
@@ -98,30 +104,36 @@
       margin-top: 10px;
     }
     .first-image {
-        width: 300px;
-        margin-top: 30px;
-        border-radius: 8px;
-        display: flex;
-        justify-content: flex-end;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      width: 100%;
+      object-fit: cover;
+      margin-top: 30px;
+      border-radius: 8px;
+      display: flex;
+      justify-content: flex-end;
+      z-index: 1;
     }
     .first-image img {
-        max-width: 400px;
-        width: 100%;
-        border-radius: 10px;
+      max-width: 400px;
+      width: 100%;
+      border-radius: 10px;
+      margin-left: auto;
     }
     .bottom-text {
-        margin-top: 30px;
-        font-size: 1rem;
+      margin-top: 30px;
+      font-size: 1rem;
     }
     .icons {
       display: flex;
       justify-content: center;
-      gap: 30px;
+      gap: 80px;
       margin-top: 30px;
       flex-wrap: wrap;
     }
     .icon-options {
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       text-align: center;
     }
     .second-section {
@@ -135,38 +147,35 @@
       margin-bottom: 30px;
     }
     .third-section {
-        background-color: #1e1e25;
-        padding: 60px 20px;
-        text-align: center;
-        height: 100vh;
+      background-color: #1e1e25;
+      padding: 60px 20px;
+      text-align: center;
+      height: 100vh;
     }
     .third-section h2{
-        font-size: 2em;
-        margin-bottom: 4px;
+      font-size: 2em;
+      margin-bottom: 4px;
     }
     .alumni-container {
-        display: flex;
-        flex-direction: column;
-        color: white;
-        max-width: 90%;
-        margin-bottom: 20px;
-        padding: 20px;
-        gap: 30px;
+      display: flex;
+      flex-direction: column;
+      color: white;
+      max-width: 90%;
+      margin-bottom: 20px;
+      padding: 20px;
+      gap: 30px;
     }
     .alumni-details {
-        display: flex;
-        align-items: center;
-        padding-bottom: 20px;
-        background-color: #2a2a4b;
+      display: flex;
+      align-items: center;
+      padding-bottom: 20px;
+      background-color: #2a2a4b;
     }
     .alumni-details img {
-        width: 100px;
-        height: 120px;
-        margin-bottom: 10px;
-        object-fit: cover;
-    }
-    .alumni-text {
-        flex: 1;
+      width: 100px;
+      height: 120px;
+      margin-bottom: 10px;
+      object-fit: cover;
     }
     .features {
       display: grid;
@@ -201,42 +210,36 @@
       cursor: pointer;
     }
     .third-section button {
-        background-color: #b7942c;
-        border: none;
-        padding: 12px 25px;
-        border-radius: 5px;
-        font-size: 1.1rem;
-        color: white;
-        cursor: pointer;
+      background-color: #b7942c;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 5px;
+      font-size: 1.1rem;
+      color: white;
+      cursor: pointer;
     }
     @media (max-width: 600px) {
-  .first-content h1 {
-    font-size: 1.8rem;
-  }
-
-  .first-content p {
+     .first-content h1 {
+      font-size: 1.8rem;
+    }
+    .first-content p {
     font-size: 0.95rem;
-  }
-
-  .first-section button {
+    }
+    .first-section button {
     font-size: 1rem;
     width: 90%;
-  }
-
-  .first-image img {
+    }
+    .first-image img {
     width: 100%;
     max-width: 300px;
   }
-
   .navbar a {
     font-size: 0.9rem;
     padding: 8px;
   }
-
   .search-bar input {
     font-size: 0.9rem;
   }
-
   .search-bar button {
     font-size: 0.9rem;
     padding: 7px 10px;
@@ -261,14 +264,14 @@
     <div>
       <a href="#global">&#127760;</a>
       <a href="#menu">&#9776; Menu</a>
-      <a href="#signin">&#11122; Sign-in</a>
+      <a href="#signin" class="signin-button">&#11122; Sign-in</a>
     </div> 
     </div>
   </header>
 
   <section class="first-section">
     <div class="first-content">
-    <h1>Build Your Skills For Free.</h1>
+    <h1>Build Your Skills for Free.</h1>
     <p>
       Advance your career by learning in-demand skills in Programming, DevOps, Cybersecurity, AI, Engineering,
       and English for Developers.
@@ -279,7 +282,7 @@
     <div class="first-image">
         <img src="https://img.freepik.com/free-photo/tech-people-trying-achieve-ambitious-sustainability-goals_23-2150950196.jpg?w=1060&t=st=1709562667~exp=1709563267~hmac=0720adca46a8fef2ceee906dc1f730fbae01ff86eab5ae26d7382d0ba8eba1aa">
     </div>
-    <p style="margin-top: 20px; text-align: center;">
+    <p style="margin-top: 20px; font-size: 1.5rem; text-align: center;">
         More than 100,000 freeCodeCamp graduates work in companies such as:
     </p>
 
