@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  crossorigin="anonymous"/>
+  <title>Free Code Camp Demo</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body {
+      color: white;
+      background-color: #0f0f1a;
+    }
+    header {
+      width: 100%;
+      background-color: #0f0f1a;
+      position: fixed;
+      top: 0;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      background-attachment: fixed;
+    }
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+      font-size: 1rem;
+      padding: 14px 16px;
+    }
+    .navbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem 2rem;
+        background-color: black;
+        flex-wrap: wrap;
+    }
+    .search-bar {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      flex: 1;
+      max-width: 300px;
+    }
+    .search-bar input {
+      padding: 8px 12px;
+      border: none;
+      border-radius: 5px;
+    }
+    .search-bar button {
+      padding: 10px 15px;
+      background-color: #b7942c;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      cursor: pointer;
+    }
+    .first-section {
+      background: linear-gradient(to right, #461c6a, #1a2859);
+      min-height: 100vh;
+      padding: 150px 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: left;
+    }
+    .first-content {
+        max-width: 600px;
+        align-self: flex-start;
+    }
+    .first-content h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+    .first-content p {
+      max-width: 600px;
+      margin: 10px auto;
+      font-size: 1.2rem;
+    }
+    .first-section button {
+      background-color: rgb(183, 148, 44);
+      border: none;
+      padding: 12px 25px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1.1rem;
+      color: white;
+      margin-top: 10px;
+    }
+    .first-image {
+        width: 300px;
+        margin-top: 30px;
+        border-radius: 8px;
+        display: flex;
+        justify-content: flex-end;
+    }
+    .first-image img {
+        max-width: 400px;
+        width: 100%;
+        border-radius: 10px;
+    }
+    .bottom-text {
+        margin-top: 30px;
+        font-size: 1rem;
+    }
+    .icons {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 30px;
+      flex-wrap: wrap;
+    }
+    .icon-options {
+      font-size: 1.2rem;
+      text-align: center;
+    }
+    .second-section {
+      background-color: rgb(40, 39, 39);
+      padding: 60px 20px;
+      text-align: center;
+      height: 100vh;
+    }
+    .second-section h2 {
+      font-size: 2rem;
+      margin-bottom: 30px;
+    }
+    .third-section {
+        background-color: #1e1e25;
+        padding: 60px 20px;
+        text-align: center;
+        height: 100vh;
+    }
+    .third-section h2{
+        font-size: 2em;
+        margin-bottom: 4px;
+    }
+    .alumni-container {
+        display: flex;
+        flex-direction: column;
+        color: white;
+        max-width: 90%;
+        margin-bottom: 20px;
+        padding: 20px;
+        gap: 30px;
+    }
+    .alumni-details {
+        display: flex;
+        align-items: center;
+        padding-bottom: 20px;
+        background-color: #2a2a4b;
+    }
+    .alumni-details img {
+        width: 100px;
+        height: 120px;
+        margin-bottom: 10px;
+        object-fit: cover;
+    }
+    .alumni-text {
+        flex: 1;
+    }
+    .features {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      margin: 0 auto 30px;
+      max-width: 1000px;
+    }
+    .feature-options {
+      background-color: #1e1e2f;
+      padding: 20px;
+      border-radius: 10px;
+    }
+    .feature-options img {
+      width: 60px;
+      margin-bottom: 15px;
+    }
+    .feature-options h6 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+    .feature-options p {
+      font-size: 1rem;
+    }
+    .second-section button {
+      background-color: rgb(183, 148, 44);
+      border: none;
+      padding: 12px 25px;
+      border-radius: 5px;
+      font-size: 1.1rem;
+      color: white;
+      cursor: pointer;
+    }
+    .third-section button {
+        background-color: #b7942c;
+        border: none;
+        padding: 12px 25px;
+        border-radius: 5px;
+        font-size: 1.1rem;
+        color: white;
+        cursor: pointer;
+    }
+    @media (max-width: 600px) {
+  .first-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .first-content p {
+    font-size: 0.95rem;
+  }
+
+  .first-section button {
+    font-size: 1rem;
+    width: 90%;
+  }
+
+  .first-image img {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .navbar a {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+
+  .search-bar input {
+    font-size: 0.9rem;
+  }
+
+  .search-bar button {
+    font-size: 0.9rem;
+    padding: 7px 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+    <header>
+      <div class="navbar">
+          
+          <div class="search-bar">
+              <input type="text" placeholder="Search 11,900+ news articles, tutorials and books" />
+              <button type="submit"><i class="fa fa-search"></i></button>
+            </div>
+            
+    <div>
+      <a href="#freeCodeCamp">freeCodeCamp <i class="fa-brands fa-free-code-camp"></i></a>
+    </div>
+
+    <div>
+      <a href="#global">&#127760;</a>
+      <a href="#menu">&#9776; Menu</a>
+      <a href="#signin">&#11122; Sign-in</a>
+    </div> 
+    </div>
+  </header>
+
+  <section class="first-section">
+    <div class="first-content">
+    <h1>Build Your Skills For Free.</h1>
+    <p>
+      Advance your career by learning in-demand skills in Programming, DevOps, Cybersecurity, AI, Engineering,
+      and English for Developers.
+    </p>
+    <button onclick="alert('Welcome to freeCodeCamp!')" style="font-size: 20px;">Get started (it's free)</button>
+    </div>
+
+    <div class="first-image">
+        <img src="https://img.freepik.com/free-photo/tech-people-trying-achieve-ambitious-sustainability-goals_23-2150950196.jpg?w=1060&t=st=1709562667~exp=1709563267~hmac=0720adca46a8fef2ceee906dc1f730fbae01ff86eab5ae26d7382d0ba8eba1aa">
+    </div>
+    <p style="margin-top: 20px; text-align: center;">
+        More than 100,000 freeCodeCamp graduates work in companies such as:
+    </p>
+
+    <div class="icons">
+      <div class="icon-options"><i class="fa-brands fa-apple"></i></div>
+      <div class="icon-options">Google <i class="fa-brands fa-google"></i></div>
+      <div class="icon-options">Microsoft <i class="fa-brands fa-windows"></i></div>
+      <div class="icon-options">Spotify <i class="fa-brands fa-spotify"></i></div>
+      <div class="icon-options">Amazon <i class="fa-brands fa-amazon"></i></div>
+    </div>
+  </section>    
+  </div>
+
+  <section class="second-section">
+    <h2>Why learn with freeCodeCamp:</h2>
+
+    <div class="features">
+      <div class="feature-options">
+        <img src="https://tse1.mm.bing.net/th/id/OIP.FRaFVoxWyAAZbfCX3mYU2QHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" />
+        <h6>Large Community</h6>
+        <p>Join our vibrant learning community of students, alumni, and educators.</p>
+      </div>
+      <div class="feature-options">
+        <img src="https://tse1.mm.bing.net/th/id/OIP.AQlw_6IF34shKIdxouUGPwHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" />
+        <h6>Free Education</h6>
+        <p>Learn from our charity thanks to generous support from monthly donors.</p>
+      </div>
+      <div class="feature-options">
+        <img src="https://tse1.mm.bing.net/th/id/OIP.6NhLPVpF2lFFii-bKWY4ggHaHk?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" />
+        <h6>Extensive Certifications</h6>
+        <p>Earn industry-recognized, verifiable certifications in high-demand technologies.</p>
+      </div>
+      <div class="feature-options">
+        <img src="https://tse3.mm.bing.net/th/id/OIP.HVqJyV3AWc8_h0FvqVjyVQHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" />
+        <h6>Comprehensive Curriculum</h6>
+        <p>Enhance your technical skills with our world-class, project-based curriculum.</p>
+      </div>
+    </div>
+
+    <button onclick="alert('Start learning!')">Start Learning Now (It's Free)</button>
+  </section>
+
+  <section class="third-section">
+    <h2>Here is what our alumni say about freeCodeCamp:</h2>
+
+    <div class="alumni-container">
+
+        <div class="alumni-details">
+            <img src="https://tse1.explicit.bing.net/th/id/OIP.9V7TgmPMfjarlZyp0xNK3wHaLH?r=0&rs=1&pid=ImgDetMain&o=7&rm=3">
+            <div class="alumni-text">
+            <h2>Vera Okoye</h2>
+            <p>Software Engineer at Amazon</p>
+            <p>"It's scary to change careers. I only gained confidence that I could 
+                code by working through the hundreds of hours of free lessons on freeCodeCamp. 
+                Within a year I had a six-figure job as a Software Engineer. 
+                freeCodeCamp changed my life."
+            </p>
+            </div>
+        </div>
+
+        <div class="alumni-details">
+            <img src="https://tse2.mm.bing.net/th/id/OIP.NV6QHDAwjml379SA9lUlcgHaMv?r=0&pid=ImgDet&w=474&h=815&rs=1&o=7&rm=3">
+            <div class="alumni-text">
+            <h2>Sara Doe</h2>
+            <p>Software Engineer at ChatDesk</p>
+            <p>"freeCodeCamp was the gateway to my career as a software developer. 
+                The well-structured curriculum took my coding knowledge from a total 
+                beginner level to a very confident level. It was everything I needed 
+                to land my first dev job at an amazing company."
+            </p>
+            </div>
+        </div>
+
+        <div class="alumni-details">
+            <img src="https://th.bing.com/th/id/R.457e2a83043117615a42db0280e89f7f?rik=dr%2brOD37cp1cKA&riu=http%3a%2f%2fwww.brandtalent.net%2fimages%2fmodels%2f6473%2fportfolio%2fPhotoOctPM-1.jpg&ehk=3%2brbFaGZOWc5F6qLpApUxO57%2fiWGM5NJ5RUB%2ffEiujY%3d&risl=&pid=ImgRaw&r=0">
+            <div class="alumni-text">
+            <h2>Mirianne Noght</h2>
+            <p>Software Engineer at Spotify</p>
+            <p>"I've always struggled with learning JavaScript. 
+                I've taken many courses but freeCodeCamp's course was the one which stuck. 
+                Studying JavaScript as well as data structures and algorithms on freeCodeCamp 
+                gave me the skills and confidence I needed to land my dream job as a software engineer at Spotify."
+            </p>
+            </div>
+        </div>
+    </div>
+    <button onclick="alert('Start learning!')">Get Started(It's Free)</button>
+  </section>
+</body>
+</html>
